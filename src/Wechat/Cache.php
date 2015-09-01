@@ -61,6 +61,7 @@ class Cache
      */
     public function set($key, $value, $lifetime = 7200)
     {
+        $key = $key . $this->prefix;
         if (self::$cacheSetter) {
             return call_user_func_array(self::$cacheSetter, func_get_args());
         }
@@ -84,7 +85,7 @@ class Cache
     public function get($key, $default = null)
     {
         $return = null;
-
+        $key = $key . $this->prefix;
         if (self::$cacheGetter) {
             $return = call_user_func_array(self::$cacheGetter, func_get_args());
         } else {
