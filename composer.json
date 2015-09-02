@@ -18,7 +18,7 @@
             "email": "raymond@justering.com"
         }
     ],
-    "minimum-stability" : "dev",
+    "minimum-stability" : "stable",
     "autoload": {
         "psr-4": {
             "Overtrue\\Wechat\\": "src/Wechat/"
